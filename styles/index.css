@@ -1,0 +1,129 @@
+
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+.navbar-brand {
+  font-size: 1.5rem;
+}
+
+.nav-link {
+  font-weight: 500;
+  color: #333;
+}
+
+
+.nav-link:hover {
+  color: #0d6efd;
+}
+
+
+.icon-box i {
+  font-size: 1.5rem;
+}
+.item img{
+  transform: rotate(190deg);
+}
+
+@media (max-width: 576px) {
+  .icon-box i {
+    font-size: 1.2rem;
+  }
+  .icon-box h6 {
+    font-size: 1rem;
+  }
+  .icon-box p {
+    font-size: 0.85rem;
+  }
+}
+
+.swiper {
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 30px;
+  border-radius: 10px;
+  background: #f9f9f9;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.swiper-slide {
+  padding: 20px;
+  border-radius: 8px;
+  background: white;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+}
+.swiper-slide:hover {
+  transform: scale(1.02);
+}
+
+.swiper-slide img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.swiper-slide h3 {
+  font-size: 1.2rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.swiper-slide p {
+  color: #666;
+  font-size: 0.95rem;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  background-color: rgba(0, 0, 0, 0.6);
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+}
+
+ .swiper-button-prev::after,
+.swiper-button-next::after {
+  color: white;
+  font-size: 16px !important;
+} 
+
+.swiper-pagination-bullet {
+  background-color: #333;
+  opacity: 0.7;
+}
+.swiper-pagination-bullet-active {
+  background-color: #007bff;
+  opacity: 1;
+} 
+
+.subscription-section {
+      background-color: #00bcd4; /* Cyan background */
+      border-radius: 15px;
+      padding: 40px 20px;
+    }
+
+     footer {
+      background-color: #f8f9fa;
+      padding: 40px 20px;
+    }
+    .footer-logo {
+      font-weight: bold;
+      font-size: 20px;
+    }
+    .footer-description {
+      max-width: 250px;
+    }
+    .social-icons a {
+      margin-right: 10px;
+      color: #333;
+      font-size: 18px;
+    }
+    .footer-bottom {
+      border-top: 1px solid #ddd;
+      margin-top: 30px;
+      padding-top: 20px;
+      font-size: 14px;
+    }
