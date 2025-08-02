@@ -22,8 +22,21 @@ body {
   font-size: 1.5rem;
 }
 .item img{
-  transform: rotate(190deg);
+  transform: rotate(360deg);
 }
+@keyframes rotateInfinite {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.rotate-forever {
+  animation: rotateInfinite 10s linear infinite;
+}
+
 
 @media (max-width: 576px) {
   .icon-box i {
