@@ -40,15 +40,16 @@ document.addEventListener("DOMContentLoaded", function () {
     const col = document.createElement("div");
     col.className = "col-12 col-sm-6 col-md-4 mb-4";
 
-    const card = `
-      <div class="card h-100 shadow-sm border-0">
-        <div class="card-body text-center">
-          <i class="fa-solid ${feature.icon} fa-2x text-info mb-3"></i>
-          <h5>${feature.title}</h5>
-          <p>${feature.desc}</p>
-        </div>
-      </div>
-    `;
+   const card = `
+  <div class="card h-100 shadow-sm border-0" data-aos="fade-up">
+    <div class="card-body text-center">
+      <i class="fa-solid ${feature.icon} fa-2x text-info mb-3"></i>
+      <h5>${feature.title}</h5>
+      <p>${feature.desc}</p>
+    </div>
+  </div>
+`;
+
 
     col.innerHTML = card;
     featureCardsContainer.appendChild(col);
@@ -91,7 +92,7 @@ document.addEventListener("DOMContentLoaded", function () {
     card.className = "col-md-4 mb-4";
 
     card.innerHTML = `
-      <div class="card h-100 shadow-sm border-0 p-3">
+      <div class="card h-100 shadow-sm border-0 p-3 "data-aos="zoom-in">
         <p>${t.message}</p>
         <div class="d-flex align-items-center mt-4">
           <img src="${t.image}" alt="${t.name}" class="rounded-circle me-3" width="50" height="50" style="object-fit: cover;" />
