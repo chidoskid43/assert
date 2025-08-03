@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Sign In - WalletWise</title>
+  <link rel="stylesheet" href="./bootstrap-5.0.2-dist/bootstrap-5.0.2-dist/css/bootstrap.min.css" />
+</head>
+<body class="bg-light d-flex align-items-center justify-content-center vh-100">
+  <div class="card shadow p-4" style="width: 100%; max-width: 400px;">
+    <h4 class="mb-4 text-center text-info">Welcome Back</h4>
+    
+    <!-- ✅ Form starts here -->
+    <form id="signinForm">
+      <div class="mb-3">
+        <label>Email</label>
+        <input type="email" class="form-control" placeholder="Enter email" required>
+      </div>
+      <div class="mb-3">
+        <label>Password</label>
+        <input type="password" class="form-control" placeholder="Enter password" required>
+      </div>
+      <button type="submit" class="btn btn-info w-100 text-white">Sign In</button>
+      <p class="text-center mt-3">Don’t have an account? <a href="signup.html" class="text-info">Sign Up</a></p>
+    </form>
+    <!-- ✅ Form ends here -->
+  </div>
+
+  <!-- ✅ JavaScript goes here (before </body>) -->
+  <script>
+    document.getElementById('signinForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      // Show success message
+      alert("Success");
+
+      // Redirect to dashboard
+      window.location.href = 'dashboard.html';
+    });
+  </script>
+</body>
+</html>
