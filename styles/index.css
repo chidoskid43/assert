@@ -1,4 +1,7 @@
 
+html {
+  scroll-behavior: smooth;
+}
 body {
   font-family: 'Poppins', sans-serif;
 }
@@ -141,3 +144,5 @@ body {
       padding-top: 20px;
       font-size: 14px;
     }
+
+    
