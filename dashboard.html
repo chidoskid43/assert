@@ -3,44 +3,113 @@
 <head>
   <meta charset="UTF-8" />
   <title>Dashboard - WalletWise</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <link rel="stylesheet" href="./bootstrap-5.0.2-dist/bootstrap-5.0.2-dist/css/bootstrap.min.css" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #f8f9fa;
+    }
+    .card {
+      border: none;
+      border-radius: 10px;
+    }
+    .card-title {
+      font-weight: bold;
+    }
+    .welcome-box {
+      background: linear-gradient(135deg, #17a2b8, #138496);
+      color: white;
+      padding: 30px;
+      border-radius: 10px;
+    }
+    .quick-action i {
+      font-size: 1.5rem;
+    }
+    .transaction-list li {
+      padding: 0.75rem;
+      border-bottom: 1px solid #eee;
+    }
+  </style>
 </head>
-<body class="bg-light">
-  <nav class="navbar navbar-light bg-white shadow-sm px-4 py-3">
+<body>
+  <nav class="navbar navbar-light bg-white shadow-sm px-4 py-3 sticky-top">
     <span class="navbar-brand fw-bold text-info">WalletWise</span>
     <a href="index.html" class="btn btn-outline-info">Logout</a>
   </nav>
 
-  <section class="container py-5">
-    <h3 class="text-center text-dark fw-bold">Welcome to Your Dashboard</h3>
-    <p class="text-center">Track your assets, transactions, and security settings here.</p>
-  </section>
-  <div class="row g-4 mt-4">
-  <div class="col-md-4">
-    <div class="card text-center p-3 shadow-sm">
-      <h5>Wallet Balance</h5>
-      <p class="text-info fw-bold">$12,500</p>
+  <div class="container py-4">
+    <!-- Welcome Box -->
+    <div class="welcome-box mb-4">
+      <h3 id="username">Welcome back!</h3>
+      <p>Manage your portfolio, transactions, and security all in one place.</p>
+    </div>
+
+    <div class="row g-4">
+      <!-- Wallet Stats -->
+      <div class="col-md-4">
+        <div class="card p-3 shadow-sm">
+          <h5 class="card-title text-info">Wallet Balance</h5>
+          <p class="fw-bold fs-4">$12,500</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card p-3 shadow-sm">
+          <h5 class="card-title text-info">Transactions</h5>
+          <p>5 in last 24 hours</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card p-3 shadow-sm">
+          <h5 class="card-title text-info">Security Status</h5>
+          <p class="text-success fw-bold">Excellent</p>
+        </div>
+      </div>
+
+      <!-- Quick Actions -->
+      <div class="col-md-6">
+        <div class="card p-3 shadow-sm">
+          <h5 class="card-title text-info mb-3">Quick Actions</h5>
+          <div class="d-flex justify-content-between quick-action">
+            <button class="btn btn-outline-info"><i class="fas fa-arrow-up"></i> Send</button>
+            <button class="btn btn-outline-info"><i class="fas fa-arrow-down"></i> Receive</button>
+            <button class="btn btn-outline-info"><i class="fas fa-money-bill"></i> Buy</button>
+            <button class="btn btn-outline-info"><i class="fas fa-repeat"></i> Swap</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Recent Transactions -->
+      <div class="col-md-6">
+        <div class="card p-3 shadow-sm">
+          <h5 class="card-title text-info mb-3">Recent Transactions</h5>
+          <ul class="list-unstyled transaction-list">
+            <li><i class="fas fa-arrow-down text-success"></i> Received 0.5 BTC - <small>Aug 3, 2025</small></li>
+            <li><i class="fas fa-arrow-up text-danger"></i> Sent 0.2 ETH - <small>Aug 2, 2025</small></li>
+            <li><i class="fas fa-money-bill text-info"></i> Bought 1 LTC - <small>Aug 1, 2025</small></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Security Settings -->
+      <div class="col-md-12">
+        <div class="card p-4 shadow-sm">
+          <h5 class="card-title text-info">Security Settings</h5>
+          <p>Keep your wallet safe by enabling 2FA and regularly updating your password.</p>
+          <button class="btn btn-outline-dark">Manage Security</button>
+        </div>
+      </div>
     </div>
   </div>
-  <div class="col-md-4">
-    <div class="card text-center p-3 shadow-sm">
-      <h5>Transactions</h5>
-      <p>5 in last 24 hours</p>
-    </div>
-  </div>
-  <div class="col-md-4">
-    <div class="card text-center p-3 shadow-sm">
-      <h5>Security Status</h5>
-      <p class="text-success fw-bold">Excellent</p>
-    </div>
-  </div>
-</div>
-<script>
-  const loggedInUser = localStorage.getItem("activeUser");
-if (!loggedInUser) {
-  alert("You must sign in first.");
-  window.location.href = "signin.html";
-}
-</script>
+
+  <script>
+    const user = JSON.parse(localStorage.getItem("activeUser"));
+    if (!user) {
+      alert("You must sign in first.");
+      window.location.href = "signin.html";
+    } else {
+      document.getElementById("username").textContent = `Welcome back, ${user.surname} ${user.lastname}!`;
+    }
+  </script>
 </body>
 </html>

@@ -3,96 +3,159 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>WalletWise Sign Up</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <title>WalletWise - Sign Up</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/>
 </head>
-<body>
-  <div class="container mt-5">
-    <h2 class="mb-4 text-center fw-bold text-info">Create Your WalletWise Account</h2>
-    <form id="signupForm" class="row g-3">
-      <div class="col-md-4">
-        <label class="form-label">Surname</label>
-        <input type="text" class="form-control" id="surname" required>
+<body class="bg-light">
+
+  <div class="container py-5">
+    <div class="row justify-content-center">
+      <div class="col-md-8 col-lg-6">
+        <div class="card shadow p-4">
+          <h3 class="text-center mb-4 text-info fw-bold sticky-top">Create Your WalletWise Account</h3>
+          <form id="signupForm">
+            <!-- Full Name -->
+            <div class="row">
+              <div class="mb-3 col-md-4">
+                <label for="surname" class="form-label">Surname</label>
+                <input type="text" id="surname" class="form-control" required>
+              </div>
+              <div class="mb-3 col-md-4">
+                <label for="middleName" class="form-label">Middle Name</label>
+                <input type="text" id="middleName" class="form-control">
+              </div>
+              <div class="mb-3 col-md-4">
+                <label for="lastName" class="form-label">Last Name</label>
+                <input type="text" id="lastName" class="form-control" required>
+              </div>
+            </div>
+
+            <!-- Gender and DOB -->
+            <div class="row">
+              <div class="mb-3 col-md-6">
+                <label for="gender" class="form-label">Gender</label>
+                <select id="gender" class="form-select" required>
+                  <option value="">Choose...</option>
+                  <option>Male</option>
+                  <option>Female</option>
+                  <option>Other</option>
+                </select>
+              </div>
+              <div class="mb-3 col-md-6">
+                <label for="dob" class="form-label">Date of Birth</label>
+                <input type="date" id="dob" class="form-control" required>
+              </div>
+            </div>
+
+            <!-- State and Nationality -->
+            <div class="row">
+              <div class="mb-3 col-md-6">
+                <label for="state" class="form-label">State of Origin</label>
+                <input type="text" id="state" class="form-control" required>
+              </div>
+              <div class="mb-3 col-md-6">
+                <label for="nationality" class="form-label">Nationality</label>
+                <input type="text" id="nationality" class="form-control" required>
+              </div>
+            </div>
+
+            <!-- Email -->
+            <div class="mb-3">
+              <label for="email" class="form-label">Email address</label>
+              <input type="email" id="email" class="form-control" required>
+            </div>
+
+            <!-- Password -->
+            <div class="mb-3">
+              <label for="password" class="form-label">Password</label>
+              <div class="input-group">
+                <input type="password" id="password" class="form-control" required>
+                <span class="input-group-text" onclick="togglePassword('password', this)">
+                  <i class="fas fa-eye"></i>
+                </span>
+              </div>
+            </div>
+
+            <!-- Confirm Password -->
+            <div class="mb-3">
+              <label for="confirmPassword" class="form-label">Confirm Password</label>
+              <div class="input-group">
+                <input type="password" id="confirmPassword" class="form-control" required>
+                <span class="input-group-text" onclick="togglePassword('confirmPassword', this)">
+                  <i class="fas fa-eye"></i>
+                </span>
+              </div>
+            </div>
+
+            <!-- Submit -->
+            <div class="d-grid mt-4">
+              <button type="submit" class="btn btn-info">Sign Up</button>
+            </div>
+            <div class="text-center mt-3">
+              Already have an account? <a href="signin.html">Sign in</a>
+            </div>
+          </form>
+        </div>
       </div>
-      <div class="col-md-4">
-        <label class="form-label">Middle Name</label>
-        <input type="text" class="form-control" id="middlename">
-      </div>
-      <div class="col-md-4">
-        <label class="form-label">Last Name</label>
-        <input type="text" class="form-control" id="lastname" required>
-      </div>
-      <div class="col-md-6">
-        <label class="form-label">Email</label>
-        <input type="email" class="form-control" id="email" required>
-      </div>
-      <div class="col-md-6">
-        <label class="form-label">Password</label>
-        <input type="password" class="form-control" id="password" required>
-      </div>
-      <div class="col-md-6">
-        <label class="form-label">Date of Birth</label>
-        <input type="date" class="form-control" id="dob" required>
-      </div>
-      <div class="col-md-6">
-        <label class="form-label">Gender</label>
-        <select class="form-select" id="gender" required>
-          <option selected disabled value="">Choose...</option>
-          <option>Male</option>
-          <option>Female</option>
-          <option>Other</option>
-        </select>
-      </div>
-      <div class="col-md-6">
-        <label class="form-label">State of Origin</label>
-        <input type="text" class="form-control" id="state" required>
-      </div>
-      <div class="col-md-6">
-        <label class="form-label">Nationality</label>
-        <input type="text" class="form-control" id="nationality" required>
-      </div>
-      <div class="col-12">
-        <button type="submit" class="btn btn-info w-100">Sign Up</button>
-      </div>
-    </form>
-    <p class="mt-3">Already have an account? <a href="signin.html">Sign In</a></p>
+    </div>
   </div>
 
+  <!-- JavaScript -->
   <script>
-    document.getElementById("signupForm").addEventListener("submit", function(e) {
+    function togglePassword(inputId, el) {
+      const input = document.getElementById(inputId);
+      const icon = el.querySelector('i');
+      if (input.type === 'password') {
+        input.type = 'text';
+        icon.classList.remove('fa-eye');
+        icon.classList.add('fa-eye-slash');
+      } else {
+        input.type = 'password';
+        icon.classList.remove('fa-eye-slash');
+        icon.classList.add('fa-eye');
+      }
+    }
+
+    document.getElementById("signupForm").addEventListener("submit", function (e) {
       e.preventDefault();
 
       const email = document.getElementById("email").value;
       const password = document.getElementById("password").value;
+      const confirmPassword = document.getElementById("confirmPassword").value;
 
-      const users = JSON.parse(localStorage.getItem("users")) || [];
+      if (password !== confirmPassword) {
+        alert("Passwords do not match!");
+        return;
+      }
 
-      const userExists = users.find(user => user.email === email);
-      if (userExists) {
-        alert("User already exists. Please sign in.");
+      // Check if user already exists
+      const existingUser = JSON.parse(localStorage.getItem(email));
+      if (existingUser) {
+        alert("Account already exists. Please sign in.");
         window.location.href = "signin.html";
         return;
       }
 
-      const newUser = {
+      // Save user data
+      const userData = {
         surname: document.getElementById("surname").value,
-        middlename: document.getElementById("middlename").value,
-        lastname: document.getElementById("lastname").value,
-        email,
-        password,
-        dob: document.getElementById("dob").value,
+        middleName: document.getElementById("middleName").value,
+        lastName: document.getElementById("lastName").value,
         gender: document.getElementById("gender").value,
+        dob: document.getElementById("dob").value,
         state: document.getElementById("state").value,
         nationality: document.getElementById("nationality").value,
+        email: email,
+        password: password
       };
 
-      users.push(newUser);
-      localStorage.setItem("users", JSON.stringify(users));
-      localStorage.setItem("activeUser", JSON.stringify(newUser));
-
-      alert("Account created successfully!");
-      window.location.href = "dashboard.html";
+      localStorage.setItem(email, JSON.stringify(userData));
+      alert("Signup successful!");
+      window.location.href = "signin.html";
     });
   </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

@@ -116,7 +116,7 @@ const swiper = new Swiper('.swiper', {
   loop: true,
   spaceBetween: 30,
   autoplay: {
-    delay: 2000,
+    delay: 3000,
   },
   pagination: {
     el: '.swiper-pagination',
