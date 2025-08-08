@@ -114,16 +114,15 @@
       const email = document.getElementById("email").value.trim();
       const password = document.getElementById("password").value;
 
-      const users = JSON.parse(localStorage.getItem("users")) || [];
+      // Get user data using email as key (matching signup storage format)
+      const userData = JSON.parse(localStorage.getItem(email));
 
-      const user = users.find(u => u.email === email && u.password === password);
-
-      if (!user) {
+      if (!userData || userData.password !== password) {
         alert("Invalid email or password.");
         return;
       }
 
-      localStorage.setItem("activeUser", JSON.stringify(user));
+      localStorage.setItem("activeUser", JSON.stringify(userData));
       alert("Login successful!");
       window.location.href = "dashboard.html";
     });
